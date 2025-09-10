@@ -1,0 +1,38 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enter the Passcode</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    .container { padding: 20px; border: 1px solid #ccc; display: inline-block; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Enter the passcode to continue</h1>
+  <input type="password" id="passcode-input" placeholder="Enter passcode">
+  <button onclick="checkPasscode()">Submit</button>
+</div>
+
+<script>
+  function checkPasscode() {
+    // Set your secret passcode here
+    var correctPasscode = "090409";
+
+    var enteredPasscode = document.getElementById("passcode-input").value;
+
+    if (enteredPasscode === correctPasscode) {
+      // Redirect to the protected page if the passcode is correct
+      window.location.href = "protected-page.html";
+    } else {
+      // Show an alert if the passcode is incorrect
+      alert("Incorrect passcode. Please try again.");
+    }
+  }
+</script>
+
+</body>
+</html>
